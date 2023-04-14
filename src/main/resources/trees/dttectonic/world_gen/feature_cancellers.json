@@ -1,0 +1,81 @@
+[
+	{
+		"_comment": "Cancel any trees from tectonic biomes.",
+		"select": { "name": "tectonic:.*" },
+		"cancellers": {
+			"type": "tree",
+			"namespaces": [ "minecraft", "tectonic" ]
+		}
+	},
+	{
+		"_comment": "Cancel any cacti from tectonic biomes.",
+		"select": { "name": "tectonic:.*" },
+		"only_if_loaded": "dynamictreesplus",
+		"cancellers": {
+			"types": [  "tree", "dynamictreesplus:cactus"],
+			"namespaces": [ "minecraft", "tectonic" ]
+		}
+	},
+	{
+		"__comment" : "Try to fix wooded badlands not cancelling vanilla trees",
+		"select": { "name": "minecraft:wooded_badlands" },
+		"cancellers": {
+			"type": "tree",
+			"namespaces": [ "minecraft", "tectonic" ]
+		}
+	},
+	{
+		"__comment" : "Also remove trees from minecraft desert (to help with dirt_like blocks in desert)",
+		"select": { "name": "minecraft:desert" },
+		"cancellers": {
+			"type": "tree",
+			"namespaces": [ "minecraft", "tectonic" ]
+		}
+	},
+	{
+		"_comment": "Cancel any cacti from minecraft desert",
+		"select": { "name": "minecraft:desert" },
+		"only_if_loaded": "dynamictreesplus",
+		"cancellers": {
+			"types": [  "tree", "dynamictreesplus:cactus"],
+			"namespaces": [ "minecraft", "tectonic" ]
+		}
+	},
+
+	{
+		"select": { "name": "biomesoplenty:boreal_forest" },
+		"cancellers": {
+			"type": "tree",
+			"namespaces": [ "minecraft", "biomesoplenty" ]
+		}
+	},
+
+	{
+		"select": { "name": "terralith:skylands_autumn" },
+		"cancellers": {
+			"type": "tree",
+			"namespaces": [ "minecraft", "biomesoplenty", "tectonicbop" ]
+		}
+	},
+	{
+		"select": { "name": "terralith:skylands_winter" },
+		"cancellers": {
+			"type": "tree",
+			"namespaces": [ "minecraft", "biomesoplenty", "tectonicbop" ]
+		}
+	},
+	{
+		"select": { "name": "terralith:skylands_spring" },
+		"cancellers": {
+			"type": "tree",
+			"namespaces": [ "minecraft", "biomesoplenty", "tectonicbop" ]
+		}
+	},
+	{
+		"select": { "name": "terralith:skylands_summer" },
+		"cancellers": {
+			"type": "tree",
+			"namespaces": [ "minecraft", "biomesoplenty", "tectonicbop" ]
+		}
+	}
+]

@@ -1,0 +1,7 @@
+	{
+  "common_leaves": "oak",
+  "common_species": "dttectonic:dead",
+  "primitive_log": "stripped_oak_log",
+  "generate_stripped_branch": false,
+  "max_branch_radius": 8
+}

@@ -1,0 +1,229 @@
+[
+	{
+		"__comment" : "Wooded Mesas have a chance of generating oak on the dirt patches.",
+		"select": { "name": "minecraft:wooded_badlands" },
+		"apply": {
+		  "species" : "oak",
+		  "density": [ 0.5 ],
+		  "chance": 0.5
+		}
+    },
+	{
+		"_comment": "dead trees",
+		"select": { "name": "tectonic:red_desert" },
+		"apply": {
+			"species" : "dttectonic:dead",
+			"density": 0,
+			"chance": 0.1
+		}
+	},
+	{
+		"_comment": "dead trees",
+		"select": { "name": "tectonic:red_desert_dunes" },
+		"apply": {
+			"species" : "dttectonic:dead",
+			"density": 0,
+			"chance": 0.1
+		}
+	},
+	{
+		"_comment": "dead trees",
+		"select": { "name": "tectonic:desert_dunes" },
+		"apply": {
+			"species" : "dttectonic:dead",
+			"density": 0,
+			"chance": 0.3
+		}
+	},
+	{
+		"_comment": "dead trees",
+		"select": { "name": "minecraft:desert" },
+		"apply": {
+			"species": {
+				"method": "splice_before",
+				"random": {
+					"...": 1,
+					"dttectonic:dead": 1
+				}
+			},
+			"density": 0,
+			"chance": 0.3
+		}
+	},
+	{
+		"_comment": "dead trees",
+		"select": { "name": "minecraft:badlands" },
+		"apply": {
+			"species": {
+				"method": "splice_before",
+				"random": {
+					"...": 2,
+					"dttectonic:dead": 1
+				}
+			},
+			"density": 0,
+			"chance": 0.3
+		}
+	},
+	{
+		"_comment": "Adds saguaro cacti to all Badlands biomes if DT+ is loaded.",
+		"select": { "name": "tectonic:badlands_spires" },
+		"only_if_loaded": "dynamictreesplus",
+		"apply": {
+			"species" : "dynamictreesplus:saguaro_cactus",
+			"density" : 0,
+			"chance": 0.3
+		}
+	},
+	{
+		"_comment": "Adds saguaro cacti to all Badlands biomes if DT+ is loaded.",
+		"select": { "name": "tectonic:red_desert" },
+		"only_if_loaded": "dynamictreesplus",
+		"apply": {
+			"species" : {
+				"method": "splice_before",
+				"random": {
+					"...": 1,
+					"dynamictreesplus:saguaro_cactus": 15
+				}
+			}
+		}
+	},
+	{
+		"_comment": "Adds saguaro cacti to all Badlands biomes if DT+ is loaded.",
+		"select": { "name": "tectonic:red_desert_dunes" },
+		"only_if_loaded": "dynamictreesplus",
+		"apply": {
+			"species" : {
+				"method": "splice_before",
+				"random": {
+					"...": 1,
+					"dynamictreesplus:saguaro_cactus": 15
+				}
+			}
+		}
+	},
+	{
+		"_comment": "Adds regular cacti to the tectonic sandy biomes if DT+ is loaded.",
+		"select": { "name": "tectonic:desert_dunes" },
+		"only_if_loaded": "dynamictreesplus",
+		"apply": {
+			"species" : {
+				"method": "splice_before",
+				"random": {
+					"...": 1,
+					"dynamictreesplus:pillar_cactus" : 12,
+					"dynamictreesplus:pipe_cactus" : 2
+				}
+			}
+		}
+	},
+	{
+		"_comment": "Adds regular cacti to the tectonic sandy biomes if DT+ is loaded.",
+		"select": { "name": "tectonic:sandstone_cliffs" },
+		"only_if_loaded": "dynamictreesplus",
+		"apply": {
+			"species" : {
+				"method": "splice_before",
+				"random": {
+					"...": 1,
+					"dynamictreesplus:pillar_cactus" : 12,
+					"dynamictreesplus:pipe_cactus" : 2
+				}
+			}
+		}
+	},
+	{
+		"_comment": "Adds regular cacti to the minecraft sandy biomes if DT+ is loaded.",
+		"select": { "name": "minecraft:desert" },
+		"only_if_loaded": "dynamictreesplus",
+		"apply": {
+			"species" : {
+				"method": "splice_before",
+				"random": {
+					"...": 1,
+					"dynamictreesplus:pillar_cactus" : 6,
+					"dynamictreesplus:pipe_cactus" : 1
+				}
+			}
+		}
+	},
+	
+	{
+		"select": { "name": "biomesoplenty:boreal_forest" },
+		"apply": {
+			"species" : {
+				"random" : {
+					"dtbop:rainbow_birch" : 6,
+					"dtbop:fir" : 2,
+					"dtbop:oak_bush" : 1
+				}
+			},
+			"density": 0.5,
+			"chance": 0.8,
+			"forestness" : 1.0
+		}
+	},
+
+	{
+		"select": { "name": "terralith:skylands_autumn" },
+		"apply": {
+				"species" : {
+					"random" : {
+						"oak" : 7,
+						"birch" : 2,
+						"apple_oak" : 1
+					}
+				},
+				"density": 0.5,
+				"chance": 0.5,
+				"forestness" : 0.5
+		}
+	},
+	{
+		"select": { "name": "terralith:skylands_spring" },
+		"apply": {
+				"species" : {
+					"random" : {
+						"oak" : 7,
+						"birch" : 2,
+						"apple_oak" : 1
+					}
+				},
+				"density": 0.5,
+				"chance": 0.5,
+				"forestness" : 0.5
+		}
+	},
+	{
+		"select": { "name": "terralith:skylands_winter" },
+		"apply": {
+				"species" : {
+					"random" : {
+						"spruce" : 7,
+						"dark_oak" : 2,
+						"mega_spruce" : 1,
+						"apple_oak" : 1
+					}
+				},
+				"density": 0.5,
+				"chance": 0.5,
+				"forestness" : 0.5
+		}
+	},
+	{
+		"select": { "name": "terralith:skylands_summer" },
+		"apply": {
+				"species" : {
+					"random" : {
+						"acacia" : 7,
+						"jungle" : 2,
+						"apple_oak" : 1
+					}
+				},
+				"density": 0.5,
+				"chance": 0.5,
+				"forestness" : 0.5
+		}
+	}
+]
