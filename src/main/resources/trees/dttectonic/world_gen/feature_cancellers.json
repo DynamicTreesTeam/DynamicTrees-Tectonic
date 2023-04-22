@@ -43,39 +43,11 @@
 	},
 
 	{
+		"_comment": "Until DT-BOP is updated...",
 		"select": { "name": "biomesoplenty:boreal_forest" },
 		"cancellers": {
 			"type": "tree",
 			"namespaces": [ "minecraft", "biomesoplenty" ]
-		}
-	},
-
-	{
-		"select": { "name": "terralith:skylands_autumn" },
-		"cancellers": {
-			"type": "tree",
-			"namespaces": [ "minecraft", "biomesoplenty", "tectonicbop" ]
-		}
-	},
-	{
-		"select": { "name": "terralith:skylands_winter" },
-		"cancellers": {
-			"type": "tree",
-			"namespaces": [ "minecraft", "biomesoplenty", "tectonicbop" ]
-		}
-	},
-	{
-		"select": { "name": "terralith:skylands_spring" },
-		"cancellers": {
-			"type": "tree",
-			"namespaces": [ "minecraft", "biomesoplenty", "tectonicbop" ]
-		}
-	},
-	{
-		"select": { "name": "terralith:skylands_summer" },
-		"cancellers": {
-			"type": "tree",
-			"namespaces": [ "minecraft", "biomesoplenty", "tectonicbop" ]
 		}
 	}
 ]

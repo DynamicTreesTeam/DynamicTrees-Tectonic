@@ -36,7 +36,7 @@ public class DynamicTreesTectonic
 
         RegisterTectonicBiomes.REGISTER.register(modEventBus);
         RegisterTerralithBiomes.REGISTER.register(modEventBus);
-        SkylandsGroundFinder.register();
+//        SkylandsGroundFinder.register();
     }
     
     private void gatherData(final GatherDataEvent event) {

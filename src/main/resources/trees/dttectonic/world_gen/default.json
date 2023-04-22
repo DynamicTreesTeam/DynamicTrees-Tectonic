@@ -9,6 +9,95 @@
 		}
     },
 	{
+		"select": { "name": "tectonic:alpine_meadow" },
+		"apply": {
+			"species" : "spruce",
+			"density": [ 0.1 ],
+			"chance": 0.002
+		}
+	},
+	{
+		"select": { "name": "tectonic:autumn_forest" },
+		"apply": {
+			"species" : "oak",
+			"density": [ 1 ],
+			"chance": 1.0,
+			"forestness" : 1.0
+		}
+	},
+	{
+		"select": { "name": "tectonic:autumn_birch_forest" },
+		"apply": {
+			"species" : "birch",
+			"density": [ 1 ],
+			"chance": 1.0,
+			"forestness" : 1.0
+		}
+	},
+	{
+		"select": { "name": "tectonic:cold_plains" },
+		"apply": {
+			"species" : {
+				"random" : {
+					"oak": 24,
+					"apple_oak": 1
+				}
+			},
+			"density": 0,
+			"chance": 0.03
+		}
+	},
+	{
+		"select": { "name": "tectonic:grasslands" },
+		"apply": {
+			"species" : {
+				"random" : {
+					"oak": 24,
+					"apple_oak": 1
+				}
+			},
+			"density": 0,
+			"chance": 0.03
+		}
+	},
+	{
+		"select": { "name": "tectonic:island" },
+		"apply": {
+			"species" : {
+				"random" : {
+					"oak": 24,
+					"apple_oak": 1
+				}
+			},
+			"density": 0,
+			"chance": 0.03
+		}
+	},
+	{
+		"select": { "name": "tectonic:old_growth_snowy_taiga" },
+		"apply": {
+			"species" : "mega_spruce",
+			"density": [ 1 ],
+			"chance": 1
+		}
+	},
+	{
+		"select": { "name": "tectonic:evergreen_forest" },
+		"apply": {
+			"species" : "birch",
+			"density": [ 1 ],
+			"chance": 1
+		}
+	},
+	{
+	"select": { "name": "tectonic:old_growth_evergreen_forest" },
+		"apply": {
+			"species" : "tall_birch",
+			"density": [ 1 ],
+			"chance": 1
+		}
+	},
+	{
 		"_comment": "dead trees",
 		"select": { "name": "tectonic:red_desert" },
 		"apply": {
@@ -43,21 +132,6 @@
 				"method": "splice_before",
 				"random": {
 					"...": 1,
-					"dttectonic:dead": 1
-				}
-			},
-			"density": 0,
-			"chance": 0.3
-		}
-	},
-	{
-		"_comment": "dead trees",
-		"select": { "name": "minecraft:badlands" },
-		"apply": {
-			"species": {
-				"method": "splice_before",
-				"random": {
-					"...": 2,
 					"dttectonic:dead": 1
 				}
 			},
@@ -134,7 +208,7 @@
 		}
 	},
 	{
-		"_comment": "Adds regular cacti to the minecraft sandy biomes if DT+ is loaded.",
+		"_comment": "Re-adding dynamic cacti to minecraft desert (since removed beforehand)",
 		"select": { "name": "minecraft:desert" },
 		"only_if_loaded": "dynamictreesplus",
 		"apply": {
@@ -148,8 +222,9 @@
 			}
 		}
 	},
-	
+
 	{
+		"_comment": "Until DT-BOP is updated...",
 		"select": { "name": "biomesoplenty:boreal_forest" },
 		"apply": {
 			"species" : {
@@ -163,139 +238,5 @@
 			"chance": 0.8,
 			"forestness" : 1.0
 		}
-	},
-
-	{
-		"select": { "name": "terralith:skylands_autumn" },
-		"apply": {
-				"species" : {
-					"random" : {
-						"oak" : 4,
-						"birch" : 4,
-						"apple_oak" : 1
-					}
-				},
-				"density": 0.5,
-				"chance": 0.3,
-				"forestness" : 0.5
-		}
-	},
-	{
-		"select": { "name": "terralith:skylands_spring" },
-		"apply": {
-				"species" : {
-					"random" : {
-						"oak" : 4,
-						"birch" : 4,
-						"apple_oak" : 1
-					}
-				},
-				"density": 0.5,
-				"chance": 0.3,
-				"forestness" : 0.5
-		}
-	},
-	{
-		"select": { "name": "terralith:skylands_winter" },
-		"apply": {
-				"species" : {
-					"random" : {
-						"spruce" : 7,
-						"dark_oak" : 2,
-						"mega_spruce" : 1,
-						"apple_oak" : 1
-					}
-				},
-				"density": 0.5,
-				"chance": 0.3,
-				"forestness" : 0.5
-		}
-	},
-	{
-		"select": { "name": "terralith:skylands_summer" },
-		"apply": {
-				"species" : {
-					"random" : {
-						"acacia" : 7,
-						"jungle" : 2,
-						"apple_oak" : 1
-					}
-				},
-				"density": 0.5,
-				"chance": 0.3,
-				"forestness" : 0.5
-		}
-	},
-		{
-		"select": { "name": "terralith:skylands_autumn" },
-		"only_if_loaded": "dtbop",
-		"apply": {
-				"species" : {
-					"random" : {
-						"dtbop:orange_autumn" : 4,
-						"dtbop:yellow_autumn" : 4,
-						"dtbop:maple" : 4,
-						"apple_oak" : 1
-					}
-				},
-				"density": 0.5,
-				"chance": 0.3,
-				"forestness" : 0.5
-		}
-	},
-	{
-		"select": { "name": "terralith:skylands_spring" },
-		"only_if_loaded": "dtbop",
-		"apply": {
-				"species" : {
-					"random" : {
-						"dtbop:white_cherry" : 4,
-						"dtbop:pink_cherry" : 4,
-						"dtbop:flowering_oak" : 1,
-						"dtbop:flowering_oak_bush" : 1,
-						"apple_oak": 1
-					}
-				},
-				"density": 0.5,
-				"chance": 0.3,
-				"forestness" : 0.5
-		}
-	},
-	{
-		"select": { "name": "terralith:skylands_winter" },
-		"only_if_loaded": "dtbop",
-		"apply": {
-				"species" : {
-					"random" : {
-						"dtbop:rainbow_birch" : 6,
-						"dtbop:fir" : 3,
-						"dtbop:oak_bush" : 1,
-						"dark_oak" : 1,
-						"apple_oak" : 1
-					}
-				},
-				"density": 0.5,
-				"chance": 0.3,
-				"forestness" : 0.5
-		}
-	},
-	{
-		"select": { "name": "terralith:skylands_summer" },
-		"only_if_loaded": "dtbop",
-		"apply": {
-				"species" : {
-					"random" : {
-						"dtbop:palm" : 6,
-						"dtbop:flowering_oak_bush" : 2,
-						"dtbop:jungle_twiglet" : 2,
-						"dtbop:acacia_twiglet" : 1,
-						"apple_oak" : 1
-					}
-				},
-				"density": 0.5,
-				"chance": 0.5,
-				"forestness" : 0.5
-		}
 	}
-
 ]
