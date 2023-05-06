@@ -78,7 +78,8 @@
 		"apply": {
 			"species" : "mega_spruce",
 			"density": [ 1 ],
-			"chance": 1
+			"chance": 1,
+			"forestness" : 1.0
 		}
 	},
 	{
@@ -86,7 +87,8 @@
 		"apply": {
 			"species" : "birch",
 			"density": [ 1 ],
-			"chance": 1
+			"chance": 1,
+			"forestness" : 1.0
 		}
 	},
 	{
@@ -94,7 +96,8 @@
 		"apply": {
 			"species" : "tall_birch",
 			"density": [ 1 ],
-			"chance": 1
+			"chance": 1,
+			"forestness" : 1.0
 		}
 	},
 	{

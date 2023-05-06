@@ -28,8 +28,8 @@ public class DTTectonicConfigs {
 		TERRATONIC_SAND_FIX = builder
                 .comment("If \"true\", implements fix for sandy tectonic biomes when used with terratonic. \n" +
                 		"Implements changes above, but also adds force_sand feature from terratonic. \n" +
-                		"Defaults to \"true\".")
-                .define("terratonic_sand_fix_entry", true);
+                		"Defaults to \"false\".")
+                .define("terratonic_sand_fix_entry", false);
 
 		builder.pop();
 	}

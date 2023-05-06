@@ -60,7 +60,7 @@ public class DynamicTreesTectonic
 					{
 					    event.addRepositorySource((packConsumer, packConstructor) ->
 					            packConsumer.accept(packConstructor.create(
-					            		"builtin/tectonic_tree_features_fix", new TextComponent("dttectonic fixes: tectonic_tree_features_fix"), false,
+					            		"builtin/tectonic_tree_features_fix", new TextComponent("dttectonic fixes: tectonic_tree_features_fix"), true,
 					                    () -> pack, metadataSection, Pack.Position.TOP, PackSource.BUILT_IN, false)));
 					}
 				} catch (IOException e) {
@@ -77,7 +77,7 @@ public class DynamicTreesTectonic
 					{
 					    event.addRepositorySource((packConsumer, packConstructor) ->
 					            packConsumer.accept(packConstructor.create(
-					            		"builtin/terratonic_sand_fix", new TextComponent("dttectonic fixes: terratonic_sand_fix"), false,
+					            		"builtin/terratonic_sand_fix", new TextComponent("dttectonic fixes: terratonic_sand_fix"), true,
 					                    () -> pack, metadataSection, Pack.Position.TOP, PackSource.BUILT_IN, false)));
 					}
 				} catch (IOException e) {
