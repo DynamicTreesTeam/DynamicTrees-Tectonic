@@ -1,11 +1,12 @@
 package com.djs.dttectonic;
 
 import java.io.IOException;
+import java.nio.file.Path;
 
 import com.ferreusveritas.dynamictrees.api.GatherDataHelper;
 import com.ferreusveritas.dynamictrees.api.registry.RegistryHandler;
 
-import net.minecraft.network.chat.TextComponent;
+import net.minecraft.network.chat.Component;
 import net.minecraft.server.packs.PackType;
 import net.minecraft.server.packs.metadata.pack.PackMetadataSection;
 import net.minecraft.server.packs.repository.Pack;
@@ -18,8 +19,8 @@ import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig.Type;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import net.minecraftforge.forge.event.lifecycle.GatherDataEvent;
-import net.minecraftforge.resource.PathResourcePack;
+import net.minecraftforge.data.event.GatherDataEvent;
+import net.minecraftforge.resource.PathPackResources;
 
 @Mod(DynamicTreesTectonic.MOD_ID)
 public class DynamicTreesTectonic
@@ -32,7 +33,7 @@ public class DynamicTreesTectonic
 		ModLoadingContext.get().registerConfig(Type.COMMON, DTTectonicConfigs.GENERAL_SPEC, "dttectonicconfig.toml");		
 
 		modEventBus.addListener(this::gatherData);
-		modEventBus.addListener(this::setupBuiltInDatapack);
+//		modEventBus.addListener(this::setupBuiltInDatapack);
         MinecraftForge.EVENT_BUS.register(this);
                 
         RegistryHandler.setup(MOD_ID);
@@ -44,30 +45,33 @@ public class DynamicTreesTectonic
         GatherDataHelper.gatherTagData(MOD_ID, event);
         GatherDataHelper.gatherLootData(MOD_ID, event);
     }
-
-
-	private void setupBuiltInDatapack(AddPackFindersEvent event) {	
-
-		String MODID = "dttectonic";
-		
-		if (event.getPackType() == PackType.SERVER_DATA) {
+}
+/*
+    private void setupBuiltInDatapack(AddPackFindersEvent event) {	
+		if ((event.getPackType() == PackType.SERVER_DATA)) {
 			if ((Boolean)DTTectonicConfigs.TECTONIC_TREE_FEATURES_FIX.get()) {
-				var resourcePath = ModList.get().getModFileById(MODID).getFile().findResource("resourcepacks/tectonic_tree_features_fix");
 
-	            try (var pack = new PathResourcePack(ModList.get().getModFileById(MODID).getFile().getFileName() + ":" + resourcePath, resourcePath)) {
-					var metadataSection = pack.getMetadataSection(PackMetadataSection.SERIALIZER);
-					if (metadataSection != null)
-					{
+				String MODID = "dttectonic";
+	
+	            Path resourcePath = ModList.get().getModFileById(MODID).getFile().findResource("resourcepacks/tectonic_tree_features_fix");
+	            
+	            try (PathPackResources pack = new PathPackResources(ModList.get().getModFileById(MODID).getFile().getFileName() + ":" + resourcePath, resourcePath)) {
+					try {
+						PackMetadataSection metadataSection = pack.getMetadataSection(PackMetadataSection.SERIALIZER);
 					    event.addRepositorySource((packConsumer, packConstructor) ->
-					            packConsumer.accept(packConstructor.create(
-					            		"builtin/tectonic_tree_features_fix", new TextComponent("dttectonic fixes: tectonic_tree_features_fix"), true,
-					                    () -> pack, metadataSection, Pack.Position.TOP, PackSource.BUILT_IN, false)));
+					    packConsumer.accept(packConstructor.create(
+					            "builtin/tectonic_tree_features_fix", Component.literal("DT-Tectonic Tree Fix"), false,
+					            () -> pack, metadataSection, Pack.Position.TOP, PackSource.BUILT_IN, false)));            
+					} catch (IOException e) {
+						e.printStackTrace();
 					}
-				} catch (IOException e) {
-					e.printStackTrace();
 				}
 			}
-			
+		}
+	}
+ }
+ */
+/*			
 			if ((Boolean)DTTectonicConfigs.TERRATONIC_SAND_FIX.get()) {
 				var resourcePath = ModList.get().getModFileById(MODID).getFile().findResource("resourcepacks/terratonic_sand_fix");
 
@@ -83,7 +87,5 @@ public class DynamicTreesTectonic
 				} catch (IOException e) {
 					e.printStackTrace();
 				}
-			}		
-		}    
-	}	
-}
+			}
+*/
